@@ -1,0 +1,45 @@
+# 阶段
+stages:
+  - install
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+# 安装依赖
+install:
+  stage: install
+  # 此处的tags必须填入之前注册时自定的tag
+  tags:
+    - deploy
+  # 规定仅在package.json提交时才触发此阶段
+  only:
+    changes:
+      - package.json
+  # 执行脚本
+  script: yarn
+
+# 打包项目
+build:
+  stage: build
+  tags:
+    - deploy
+  script:
+    - yarn build
+  # 将此阶段产物传递至下一阶段
+  artifacts:
+    paths:
+      - dist/
+
+# 部署项目
+deploy:
+  stage: deploy
+  tags:
+    - deploy
+  script:
+    # 清空网站根目录，目录请根据服务器实际情况填写
+    - rm -rf /usr/local/webserver/nginx/html/*
+    # 复制打包后的文件至网站根目录，目录请根据服务器实际情况填写
+    - cp -rf ${CI_PROJECT_DIR}/dist/* /usr/local/webserver/nginx/html
