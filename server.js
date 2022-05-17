@@ -36,9 +36,6 @@ http
     console.log("receive request");
     console.log(req.url);
     if (req.method === "POST" && req.url === "/") {
-      //   const data = await resolvePost(req);
-      //   const projectDir = path.resolve(`./${data.repository.name}`);
-
       // 删除原来的代码目录
       const name = "ci-test";
       const projectDir = "./ci-test";
