@@ -86,6 +86,8 @@ http
           stdio: "inherit",
         }
       );
+      // docker build . -t ci-image:latest
+      // docker run -d -p 8888:80 --name ci-container  ci-image:latest
     }
     res.end("ok");
   })

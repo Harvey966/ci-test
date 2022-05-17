@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="测试CI" />
+  <HelloWorld msg="自动化部署正常运行" />
 </template>
 
 <script>
