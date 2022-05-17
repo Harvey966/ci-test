@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="测试脚本1233333ß" />
+  <HelloWorld msg="测试脚本触发" />
 </template>
 
 <script>
