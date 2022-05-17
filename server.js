@@ -38,7 +38,7 @@ http
     if (req.method === "POST" && req.url === "/") {
       //   const data = await resolvePost(req);
       //   const projectDir = path.resolve(`./${data.repository.name}`);
-      //   deleteFolderRecursive(projectDir);
+      deleteFolderRecursive("./ci-test");
 
       // 拉取仓库最新代码
       execSync(`git clone https://github.com/Harvey966/ci-test.git ./ci-test`, {
