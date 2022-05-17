@@ -35,20 +35,20 @@ http
   .createServer(async (req, res) => {
     console.log("receive request");
     console.log(req.url);
-    if (req.method === "POST" && req.url === "/") {
-      const data = await resolvePost(req);
-      const projectDir = path.resolve(`./${data.repository.name}`);
-      deleteFolderRecursive(projectDir);
+    // if (req.method === "POST" && req.url === "/") {
+    //   const data = await resolvePost(req);
+    //   const projectDir = path.resolve(`./${data.repository.name}`);
+    //   deleteFolderRecursive(projectDir);
 
-      // 拉取仓库最新代码
-      execSync(
-        `git clone https://github.com/Harvey966/ci-test.git ${projectDir}`,
-        {
-          stdio: "inherit",
-        }
-      );
-      console.log("拉取成功");
-    }
+    //   // 拉取仓库最新代码
+    //   execSync(
+    //     `git clone https://github.com/Harvey966/ci-test.git ${projectDir}`,
+    //     {
+    //       stdio: "inherit",
+    //     }
+    //   );
+    //   console.log("拉取成功");
+    // }
     res.end("ok");
   })
   .listen(3000, () => {
