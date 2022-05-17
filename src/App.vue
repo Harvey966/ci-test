@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="第一次测试CI" />
+  <HelloWorld msg="测试脚本1233333ß" />
 </template>
 
 <script>

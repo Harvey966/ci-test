@@ -13,7 +13,7 @@ install:
   stage: install
   # 此处的tags必须填入之前注册时自定的tag
   tags:
-    - deploy
+    - vue测试
   # 规定仅在package.json提交时才触发此阶段
   only:
     changes:
@@ -25,7 +25,7 @@ install:
 build:
   stage: build
   tags:
-    - deploy
+    - vue测试
   script:
     - yarn build
   # 将此阶段产物传递至下一阶段
@@ -37,7 +37,7 @@ build:
 deploy:
   stage: deploy
   tags:
-    - deploy
+    - vue测试
   script:
     # 清空网站根目录，目录请根据服务器实际情况填写
     - rm -rf /usr/local/webserver/nginx/html/*
